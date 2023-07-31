@@ -23,27 +23,12 @@ export default function BugForm() {
 	const [actualResult, setActualResult] = useState("");
 
 	return (
-		<div
-			style={{
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-				minHeight: "100vh",
-				padding: "20px"
-			}}>
+		<div className="flex justify-center min-h-screen p-5 bg-sky-200">
 			<Grid item xs={12} sm={10} md={8} lg={6}>
 				<Paper
-					elevation={3}
-					style={{
-						padding: "20px",
-						margin: "0 auto",
-						maxWidth: "600px",
-						width: "100%",
-						"@media (min-width: 1280px)": {
-							margin: "0 150px"
-						}
-					}}>
-					<h1 className="text-2xl text-center my-4 font-sans">New Bug Form</h1>
+					className="p-5 mx-auto max-w-[800px]  md:max-w-[1000px] xl:mx-[300px] lg:mx-	[200px] sm:mx-[50px]  md:mx-[100px]"
+					elevation={12}>
+					<h1 className="text-2xl text-center my-4 font-sans">Bug Report</h1>
 					<form className="space-y-4">
 						<TextField
 							label="Bug Title"
@@ -51,8 +36,6 @@ export default function BugForm() {
 							margin="normal"
 							value={title}
 							onChange={e => setTitle(e.target.value)}
-							InputLabelProps={{ style: { fontSize: 14 } }}
-							inputProps={{ style: { fontSize: 14 } }}
 						/>
 						<FormControl fullWidth margin="normal">
 							<InputLabel id="priority-select-label" style={{ fontSize: 14 }}>
@@ -105,7 +88,6 @@ export default function BugForm() {
 						/>
 						<TextField
 							label="Actual Result"
-							style={{ marginBottom: "20px" }}
 							multiline
 							fullWidth
 							margin="normal"
